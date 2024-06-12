@@ -42,7 +42,7 @@
 
         .tag-box {
             margin: 3% 0;
-            height: 200px;
+            height: 500px;
             background: gray;
         }
 
@@ -419,7 +419,9 @@
         let uniqueTags = [];
         console.log(uniqueTags);
         reels.forEach((i) => {
-            if (i.tags != []) {
+            if (i.tags) {
+
+                // if (i.tags != []) {
 
                 i.tags.forEach((tag) => {
                     if (uniqueTags.indexOf(tag) == -1) {
@@ -427,8 +429,10 @@
                     }
                 });
             }
+            //     }
+            // }
         });
-        return
+        // return
         uniqueTags.forEach((i) => {
             document.querySelector(
                 ".tag-box"
@@ -569,7 +573,7 @@
                     // console.log(snapshot.val);
                     savedReels = snapshot.val().reels
 
-                    // updateTags(savedReels)
+                    updateTags(savedReels)
                     filterTag("");
                 }
             }
